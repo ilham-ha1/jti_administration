@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\OperatorController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::resource('/dashboard/operators', OperatorController::class);
 Route::resource('/dashboard/categories', CategoryController::class);
+
+
+Route::get('/dashboard-operator', [App\Http\Controllers\DashboardOperatorController::class, 'index'])->name('home');
+Route::resource('/dashboard-operator/document', DocumentController::class);
