@@ -30,3 +30,7 @@ Route::resource('/dashboard/categories', CategoryController::class);
 
 Route::get('/dashboard-operator', [App\Http\Controllers\DashboardOperatorController::class, 'index'])->name('home');
 Route::resource('/dashboard-operator/document', DocumentController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
